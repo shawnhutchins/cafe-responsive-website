@@ -1,0 +1,160 @@
+@import url("reset.css");
+body {
+  background-color: #fffccc;
+}
+
+.page-wrapper {
+  display: grid;
+  height: 100vh;
+  grid-gap: 40px;
+  grid-template-areas:
+    "head "
+    "brand"
+    "col1 "
+    "col2 "  
+    "col3 "
+    "foot "
+  ;
+  justify-items: center;
+  background-color: #fffccc;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px auto auto auto auto 92px;
+}
+
+.nav-top {
+  grid-area: head;
+  display: flex;
+}
+.nav-top a {
+  background-color: white;
+  font-size: larger;
+  padding: 16px;
+}
+
+.brand{
+  grid-area: brand;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; 
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+}
+.brand h1 {
+  font-size: xx-large;
+}
+.brand h2 {
+   font-size: large;
+}
+.brand h3 {
+   font-size: xx-large;
+   margin-top: 32px;
+}
+.brand hr {
+  align-self: center;
+  display: block;
+  border: 0;
+  height: 1px;
+  border-top: 2px solid rgb(0, 0, 0);
+  margin: 1em 0;
+  width: 200px;
+}
+
+.about-title {
+  text-align: left;
+}
+
+.story {
+  grid-area: brand;
+  max-width: 700;
+  margin-top: 8px;
+  text-align: left;
+  text-indent: 16px;
+}
+
+.col {
+  background-color: white; 
+  max-width: 350px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-style: solid;
+  border-width: 2px;
+}
+.col h4 {
+  font-size: xx-large;
+  font-style: italic;
+  align-self: center;
+  margin-bottom: 16px;
+}
+.col article {
+  margin-bottom: 40px;
+}
+.col img {
+  border-radius: 4px;
+}
+.column1 {
+  grid-area: col1;
+}
+.column2 {
+  grid-area: col2;
+}
+.column3 {
+  grid-area: col3;
+}
+.center-col {
+  justify-content: center;
+}
+.indent {
+  text-indent: 16px;
+}
+
+footer {
+  grid-area: foot;
+  display: grid;
+  background: #c7c3a9;
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  justify-items: end;
+}
+
+@media only screen and (min-width: 600px) {
+  .page-wrapper {
+    grid-template-areas:
+      "head  head "
+      "brand brand"
+      "col1  col2 "  
+      "col3  .    "
+      "foot  foot "
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px auto auto auto 92px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .page-wrapper {
+    grid-template-areas:
+      "head  head  head"
+      "brand brand brand"
+      "col1  col2  col3"
+      "foot  foot  foot"
+    ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px auto auto 92px;
+  }
+  .contact {
+    grid-template-areas:
+      "head  head "
+      "brand brand"
+      "col1  col2 "  
+      "col3  .    "
+      "foot  foot "
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px auto auto auto 92px;
+  }
+}
